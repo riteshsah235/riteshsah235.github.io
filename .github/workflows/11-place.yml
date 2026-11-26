@@ -1,0 +1,33 @@
+name: Place updated files (one-off)
+on:
+  push:
+    paths:
+      - ".github/workflows/place.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  place:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Move uploaded files into place
+        run: |
+          set -e
+          for f in [0-9]*-app.js [0-9]*-index.html [0-9]*-profile.jpg [0-9]*-README.md; do
+            [ -f "$f" ] || continue
+            base="${f#*-}"
+            case "$base" in
+              app.js) dest=assets/js/app.js ;;
+              index.html) dest=index.html ;;
+              profile.jpg) dest=assets/images/profile.jpg ;;
+              README.md) dest=README.md ;;
+            esac
+            mkdir -p "$(dirname "$dest")"
+            git mv -f "$f" "$dest"
+          done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Add GitHub photo halftone portrait and Built demo links"
+          git push

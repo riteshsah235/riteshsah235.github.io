@@ -89,8 +89,8 @@ assets/js/app.js  ──►  draws the heatmap and shows the "Updated" time in I
 Requires only Python 3. Serve the folder over HTTP so the data file can be fetched:
 
 ```bash
-git clone https://github.com/riteshsah235/portfolio.git
-cd portfolio
+git clone https://github.com/riteshsah235/riteshsah235.github.io.git
+cd riteshsah235.github.io
 python3 -m http.server 8000
 ```
 
@@ -102,7 +102,7 @@ python3 scripts/update_contrib.py
 
 ## Deployment
 
-The site is served by GitHub Pages from the `main` branch root of the user site repository, [`riteshsah235/riteshsah235.github.io`](https://github.com/riteshsah235/riteshsah235.github.io), at <https://riteshsah235.github.io/>. This repository holds the same source, so any push to `main` is the new version. The relative paths in `index.html` work from the root and from a subfolder.
+The site is served by GitHub Pages from the `main` branch root of the user site repository, [`riteshsah235/riteshsah235.github.io`](https://github.com/riteshsah235/riteshsah235.github.io), at <https://riteshsah235.github.io/>. This repository is the single source of truth, so any push to `main` updates the live site. The relative paths in `index.html` work from the root and from a subfolder.
 
 ## Customising
 

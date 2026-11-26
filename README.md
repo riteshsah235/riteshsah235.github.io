@@ -24,6 +24,7 @@ The page presents an "About" dossier, live project demos with animated previews,
 
 - **Dossier-style About section** with a halftone portrait rendered on a canvas from the GitHub profile photo, plus a live IST clock.
 - **Animated project cards.** Each card has a pure CSS preview marked "Illustrative preview". On hover it fades to a real screenshot marked "Demo capture". Touch devices show the animation only, and `prefers-reduced-motion` shows a still frame.
+- **Languages section** listing Python, JavaScript, TypeScript, Java, SQL, HTML and CSS.
 - **Filterable tech stack** grouped by AI/ML, backend, frontend and tools.
 - **GitHub activity heatmap** drawn from the public contribution graph of [`riteshsah235`](https://github.com/riteshsah235), refreshed every hour by a GitHub Action.
 - **Responsive layout** for desktop and mobile with a floating pill navigation.

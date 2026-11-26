@@ -37,6 +37,11 @@ const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links
 document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
  document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
  const f=b.dataset.f;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('off',f!=='all'&&!c.dataset.g.split(' ').includes(f)))});
+/* hero role cycler: five roles, 2s each, blink swap */
+(function(){const el=document.querySelector('.role');if(!el)return;
+const roles=['AI/ML ENGINEER','DEVELOPER','AGENTIC AI DEVELOPER','DATA SCIENCE STUDENT','KAGGLE COMPETITOR'];
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+let i=0;setInterval(()=>{el.classList.add('blink');setTimeout(()=>{i=(i+1)%roles.length;el.textContent=roles[i];el.classList.remove('blink')},180)},2000)})();
 const API='https://github-contributions-api.jogruber.de/v4/riteshsah235?y=last';
 function drawHeat(d,label){
  const box=document.getElementById('blocks');box.innerHTML='';

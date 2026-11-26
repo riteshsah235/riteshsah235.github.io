@@ -67,7 +67,7 @@ function drawHeat(d,label){
  box.querySelectorAll('.heat').forEach(g=>hio.observe(g))}
 const tip=document.createElement('div');tip.className='tip';document.body.appendChild(tip);
 document.addEventListener('pointermove',e=>{const t=e.target.closest&&e.target.closest('.heat i[data-tip]');if(!t){tip.style.opacity=0;return}tip.textContent=t.dataset.tip;tip.style.opacity=1;tip.style.left=Math.min(innerWidth-tip.offsetWidth-8,Math.max(8,e.clientX-tip.offsetWidth/2))+'px';tip.style.top=(e.clientY-40)+'px'},{passive:true});
-fetch('contrib.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{if(!d.generated_at)throw 0;const t=new Date(d.generated_at).toLocaleString('en',{day:'numeric',month:'short',year:'numeric',hour:'numeric',minute:'2-digit',timeZone:'Asia/Kolkata'});drawHeat(d,'Source: github.com/riteshsah235 public contribution graph. Updated hourly by a GitHub Action. Last update: '+t+' IST.')})
+fetch('data/contrib.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{if(!d.generated_at)throw 0;const t=new Date(d.generated_at).toLocaleString('en',{day:'numeric',month:'short',year:'numeric',hour:'numeric',minute:'2-digit',timeZone:'Asia/Kolkata'});drawHeat(d,'Source: github.com/riteshsah235 public contribution graph. Updated hourly by a GitHub Action. Last update: '+t+' IST.')})
 .catch(()=>fetch(API).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>drawHeat(d,'Snapshot feed from github-contributions-api.jogruber.de. It is cached and the latest days can lag.')).catch(()=>{document.getElementById('total').textContent='Contribution data is unavailable right now.'}));
 
 /* reveal on scroll */

@@ -36,7 +36,7 @@ const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links
 
 document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
  document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
- const f=b.dataset.f;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('off',f!=='all'&&!c.dataset.g.split(' ').includes(f)))});
+ const f=b.dataset.f;document.querySelectorAll('#skills .chip').forEach(c=>c.classList.toggle('off',f!=='all'&&!c.dataset.g.split(' ').includes(f)))});
 /* hero role cycler: five roles, 2s each, blink swap */
 (function(){const el=document.querySelector('.role');if(!el)return;
 const roles=['AI/ML ENGINEER','DEVELOPER','AGENTIC AI DEVELOPER','DATA SCIENCE STUDENT','KAGGLE COMPETITOR'];
@@ -105,4 +105,3 @@ function fit(){const r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1
 img.onload=()=>{sample();fit()};img.src='assets/images/profile.jpg';fit();addEventListener('resize',fit);
 const lt=document.getElementById('lt');function tick(){lt.textContent=new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true,timeZone:'Asia/Kolkata'}).toUpperCase()}tick();setInterval(tick,15000)})();
 })();
-

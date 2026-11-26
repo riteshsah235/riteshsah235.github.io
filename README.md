@@ -22,7 +22,7 @@ The page presents an "About" dossier, live project demos with animated previews,
 
 ## Highlights
 
-- **Dossier-style About section** with a rotating halftone moon visual and a live IST clock. It uses no personal photo.
+- **Dossier-style About section** with a halftone portrait rendered on a canvas from the GitHub profile photo, plus a live IST clock.
 - **Animated project cards.** Each card has a pure CSS preview marked "Illustrative preview". On hover it fades to a real screenshot marked "Demo capture". Touch devices show the animation only, and `prefers-reduced-motion` shows a still frame.
 - **Filterable tech stack** grouped by language, web, data, systems and tools.
 - **GitHub activity heatmap** drawn from the public contribution graph of [`riteshsah235`](https://github.com/riteshsah235), refreshed every hour by a GitHub Action.
@@ -47,8 +47,9 @@ The demos run on free hosting, so the first request after a quiet period can tak
 │   ├── css/
 │   │   └── style.css              # All styles, animations and responsive rules
 │   ├── js/
-│   │   └── app.js                 # Moon canvas, filters, clock, heatmap rendering
+│   │   └── app.js                 # Halftone portrait, filters, clock, heatmap rendering
 │   └── images/
+│       ├── profile.jpg            # GitHub profile photo, rendered as the halftone portrait in About
 │       ├── cs-arena.jpg           # "Demo capture" screenshots shown on card hover
 │       ├── bomb-tag.jpg
 │       └── nexuslife.jpg
